@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Users } from "./pages/Users";
 
 export const App = () => {
@@ -8,6 +8,7 @@ export const App = () => {
       <div className="app">
         <header className="header">
           <Routes>
+            <Route path="/" element={<Navigate replace to="/users" />} />
             <Route path="/users" element={<Users />} />
           </Routes>
         </header>
